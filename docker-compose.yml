@@ -1,0 +1,18 @@
+version: '3.8'
+
+volumes:
+  pg_lab2:
+
+services:
+  lab2_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=lab2_db
+    volumes:
+      - pg_lab2:/var/lib/postgresql/data
+
+    ports:
+      - "127.0.0.1:5433:5432"

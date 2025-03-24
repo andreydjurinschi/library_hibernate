@@ -30,9 +30,6 @@ public class HibernateConfig {
     @Value("${spring.jpa.properties.hibernate.format_sql}")
     private String hibernateFormatSql;
 
-    @Value("${spring.jpa.properties.hibernate.hbm2ddl.auto}")
-    private String hbm2ddlAuto;
-
     @Value("${spring.jpa.properties.hibernate.use_sql_comments}")
     private String hibernateUseSqlComments;
 
@@ -42,10 +39,9 @@ public class HibernateConfig {
         configuration.setProperty("hibernate.dialect", hibernateDialect);
         configuration.setProperty("hibernate.show_sql", hibernateShowSql);
         configuration.setProperty("hibernate.format_sql", hibernateFormatSql);
-        configuration.setProperty("hibernate.hbm2ddl.auto", hbm2ddlAuto);
         configuration.setProperty("hibernate.use_sql_comments", hibernateUseSqlComments);
 
-        // Устанавливаем параметры соединения с базой данных
+
         configuration.setProperty("hibernate.connection.url", dbUrl);
         configuration.setProperty("hibernate.connection.username", dbUsername);
         configuration.setProperty("hibernate.connection.password", dbPassword);

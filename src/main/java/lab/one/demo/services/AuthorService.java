@@ -24,6 +24,12 @@ public class AuthorService {
         authorRepository.saveAuthor(author);
     }
 
+    public void updateAuthor(Long id, AuthorDto authorDto){
+        Author author = authorMapper.mapToEntity(authorDto);
+        authorRepository.updateAuthor(id, author);
+
+    }
+
     public AuthorDto getById(Long id) {
         Author author = authorRepository.getAuthorById(id);
         if(author == null){

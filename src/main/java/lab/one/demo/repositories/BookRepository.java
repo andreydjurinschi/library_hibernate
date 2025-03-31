@@ -19,4 +19,12 @@ public class BookRepository {
         List<Book> books = session.createQuery("FROM Book ", Book.class).list();
         return books;
     }
+
+    public void addBook(Book book){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(book);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

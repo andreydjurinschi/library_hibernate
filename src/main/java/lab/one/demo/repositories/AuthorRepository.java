@@ -1,6 +1,5 @@
 package lab.one.demo.repositories;
 
-import lab.one.demo.config.HibernateConfig;
 import lab.one.demo.dtos.AuthorDto;
 import lab.one.demo.entities.Author;
 import lab.one.demo.entities.Book;

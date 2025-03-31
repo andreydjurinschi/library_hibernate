@@ -14,6 +14,7 @@ import java.util.List;
 
 @Repository
 public class AuthorRepository {
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -32,9 +33,7 @@ public class AuthorRepository {
 
     public void updateAuthor(Long id, Author author) {
         Session session = sessionFactory.openSession();
-        Author selectedAuthor = session.createQuery("FROM Author WHERE id = :id", Author.class)
-                    .setParameter("id", id)
-                    .uniqueResult();
+        Author selectedAuthor = getAuthorById(id);
             session.beginTransaction();
             if (selectedAuthor == null) {
                 throw new RuntimeException("Author with id " + id + " not found");

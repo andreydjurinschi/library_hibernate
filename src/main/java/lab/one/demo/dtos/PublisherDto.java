@@ -29,4 +29,27 @@ public class PublisherDto {
     public PublisherDto() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Long> getBooksIds() {
+        return booksIds;
+    }
+
+    public void setBooksIds(List<Long> booksIds) {
+        this.booksIds = booksIds;
+    }
 }
